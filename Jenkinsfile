@@ -3,10 +3,10 @@ pipeline {
         docker {
             image 'centos'
             label 'generic'
-        }//step
-    }//docker
+        }//docker
+    }//agent
     stages {
-        stage ("Chech hostanem of docker container")
+        stage ("Chech hostanem of docker container") {
             steps {
                 sh """
                     cat /etc/hostname
