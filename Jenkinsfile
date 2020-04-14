@@ -1,5 +1,6 @@
 pipeline {
     agent {
+<<<<<<< HEAD
         dockerfile true
         label 'generic'
     }//agent
@@ -13,6 +14,19 @@ pipeline {
                 sh """
                     python helloworld.py
                     mv helloworld.py goodbyeworld.py
+=======
+        docker {
+            image 'python'
+            label 'generic'
+        }//docker
+    }//agent
+    stages {
+        stage ("Run .py") {
+            steps {
+                sh """
+                   python helloworld.py
+                   mv helloworld.py goodbyeworld.py 
+>>>>>>> 6c16a9a80983eeaeef2a9b95a33bd986e050c6f5
                 """
             }//steps
         }//stage
