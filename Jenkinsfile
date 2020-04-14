@@ -4,19 +4,7 @@ pipeline {
         label 'generic'
     }//agent
     stages {
-        stage ("Run helloworld.py") 
-        stage ("Chech hostanem of docker container") {
-            steps {
-                sh """
-                    python helloworld.py
-                    mv helloworld.py goodbyeworld.py
-        docker {
-            image 'python'
-            label 'generic'
-        }//docker
-    }//agent
-    stages {
-        stage ("Run .py") {
+        stage ("Run helloworld.py") {
             steps {
                 sh """
                    python helloworld.py
@@ -24,11 +12,12 @@ pipeline {
                 """
             }//steps
         }//stage
-        stage("Test request")
+        stage("Test request"){
             steps {
                 sh """
                     python requestgoogle.py
                 """
-            }   
+            }//steps
+        }//stages    
     }//stages
 }//pipeline
