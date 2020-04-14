@@ -7,17 +7,17 @@ pipeline {
         stage ("Run helloworld.py") {
             steps {
                 sh """
-                   python helloworld.py
-                   mv helloworld.py goodbyeworld.py 
+                    python helloworld.py
+                    mv helloworld.py goodbyeworld.py
                 """
             }//steps
         }//stage
-        stage("Test request"){
+        stage("Test request") {
             steps {
                 sh """
                     python requestgoogle.py
                 """
             }//steps
-        }//stages    
+        }//stage       
     }//stages
 }//pipeline
